@@ -1,0 +1,84 @@
+By:
+    John Conde
+    http://www.johnconde.net
+
+License:
+    http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
+
+About:
+    A PHP library for working with all Authorize.Net's XML APIs
+
+Files:
+    - AuthnetXML.class.php                                              -> Handles the sending and receiving of XML. Include this file in your project.
+    - aim/createTransactionRequest_authCapture.php                      -> Demonstrates using the AIM API to process an Authorization and Capture transaction (sale)
+    - aim/createTransactionRequest_authOnly.php                         -> Demonstrates using the AIM API to process an Authorization Only transaction
+    - aim/createTransactionRequest_captureOnly.php                      -> Demonstrates using the AIM API to process an Unlinked Capture transaction
+    - aim/createTransactionRequest_priorAuthCapture.php                 -> Demonstrates using the AIM API to process an Prior Authorization Capture transaction
+    - aim/createTransactionRequest_refund.php                           -> Demonstrates using the AIM API to process an Refund transaction (credit)
+    - aim/createTransactionRequest_void.php                             -> Demonstrates using the AIM API to Void a transaction
+    - aim/sendCustomerTransactionReceiptRequest.php                     -> Demonstrates using the AIM API to send a customer a transaction receipt
+    - arb/ARBCancelSubscriptionRequest.php                              -> Demonstrates using the ARB API to cancel a subscription
+    - arb/ARBCreateSubscriptionRequest.php                              -> Demonstrates using the ARB API to create a subscription
+    - arb/ARBGetSubscriptionStatusRequest.php                           -> Demonstrates using the ARB API to get the status of a subscription
+    - arb/ARBUpdateSubscriptionRequest.php                              -> Demonstrates using the ARB API to update a subscription
+    - cim/createCustomerPaymentProfileRequest.php                       -> Demonstrates using the CIM API to create a payment profile
+    - cim/createCustomerProfileRequest.php                              -> Demonstrates using the CIM API to create a customer profile
+    - cim/createCustomerProfileTransactionRequest_authCapture.php       -> Demonstrates using the CIM API to process an Authorization and Capture transaction (sale)
+    - cim/createCustomerProfileTransactionRequest_authOnly.php          -> Demonstrates using the CIM API to process an Authorization Only transaction
+    - cim/createCustomerProfileTransactionRequest_captureOnly.php       -> Demonstrates using the CIM API to process an Unlinked Capture transaction
+    - cim/createCustomerProfileTransactionRequest_priorAuthCapture.php  -> Demonstrates using the CIM API to process an Prior Authorization Capture transaction
+    - cim/createCustomerProfileTransactionRequest_refund.php            -> Demonstrates using the CIM API to process an Refund transaction (credit)
+    - cim/createCustomerProfileTransactionRequest_void.php              -> Demonstrates using the CIM API to Void a transaction
+    - cim/createCustomerShippingAddressRequest.php                      -> Demonstrates using the CIM API to create a shipping profile
+    - cim/deleteCustomerPaymentProfileRequest.php                       -> Demonstrates using the CIM API to delete a customer payment profile
+    - cim/deleteCustomerProfileRequest.php                              -> Demonstrates using the CIM API to delete a customer profile
+    - cim/deleteCustomerShippingAddressRequest.php                      -> Demonstrates using the CIM API to delete a shipping profile
+    - cim/getCustomerPaymentProfileRequest.php                          -> Demonstrates using the CIM API to retrieve a customer payment profile
+    - cim/getCustomerProfileIdsRequest.php                              -> Demonstrates using the CIM API to retrieve a customer's profile IDs
+    - cim/getCustomerProfileRequest.php                                 -> Demonstrates using the CIM API to retrieve a customer profile
+    - cim/getCustomerShippingAddressRequest.php                         -> Demonstrates using the CIM API to retrieve a customer's shipping address
+    - cim/getHostedProfilePageRequest.php                               -> Demonstrates using the CIM API to retrieve a hosted profile page
+    - cim/updateSplitTenderGroupRequest.php                             -> Demonstrates using the CIM API to update a split tender group
+    - cim/updateCustomerProfileRequest.php                              -> Demonstrates using the CIM API to update a customer profile
+    - cim/updateCustomerShippingAddressRequest.php                      -> Demonstrates using the CIM API to update a shipping profile
+    - cim/validateCustomerPaymentProfileRequest.php                     -> Demonstrates using the CIM API to validate a payment profile
+    - reporting/getBatchStatisticsRequest.php                           -> Demonstrates using the Transaction Details API to process an  transaction
+    - reporting/getSettledBatchListRequest.php                          -> Demonstrates using the Transaction Details API to process an  transaction
+    - reporting/getTransactionDetailsRequest.php                        -> Demonstrates using the Transaction Details API to process an  transaction
+    - reporting/getTransactionListRequest.php                           -> Demonstrates using the Transaction Details API to process an  transaction
+    - reporting/getUnsettledTransactionListRequest.php                  -> Demonstrates using the Transaction Details API to process an  transaction
+    - config.inc.php                                                    -> Contains configurable parameters. Include this file in your project.
+    - README                                                            -> This file.
+
+Requirements:
+    - PHP 5.2+
+    - cURL PHP Extension
+    - simplexml
+    - An Authorize.Net Merchant Account or Test Account. You can get a
+      free test account at http://developer.authorize.net/testaccount/
+
+Install:
+    - Include the 'AuthnetXML.class.php' and 'config.inc.php' files in your application.
+
+Usage Examples:
+    - See the individual examples in each APIs directory
+
+Test Credit Card Numbers:
+    - Set the expiration date to anytime in the future.
+    - American Express Test Card -> 370000000000002
+    - Discover Test Card         -> 6011000000000012
+    - Visa Test Card             -> 4007000000027
+    - Second Visa Test Card      -> 4012888818888
+    - JCB                        -> 3088000000000017
+    - Diners Club/ Carte Blanche -> 38000000000006
+
+Authorize.Net API Documentation
+    - AIM XML guide              - http://www.authorize.net/support/AIM_guide_XML.pdf
+    - ARB XML guide              - http://www.authorize.net/support/ARB_guide.pdf
+    - CIM XML guide              - http://www.authorize.net/support/CIM_XML_guide.pdf
+    - Transaction Details Guide  - http://www.authorize.net/support/ReportingGuide_XML.pdf
+
+Release Notes
+    Version .9
+        - Creating the AuthnetXML files
+        - Not yet ready for release

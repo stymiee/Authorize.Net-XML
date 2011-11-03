@@ -2,8 +2,7 @@
 
 /*************************************************************************************************
 
-This class allows for easy use of any Authorize.Net XML based API. Currently this includes their
-Automated Recurring Billing (ARB) and Customer Information Manager (CIM) APIs. More information
+This class allows for easy use of any Authorize.Net XML based APIs. More information
 about these APIs can be found at http://developer.authorize.net/api/.
 
 PHP version 5
@@ -22,12 +21,12 @@ You should have received a copy of the GNU Lesser General Public License
 along with this program.  If not, see http://www.gnu.org/licenses/.
 
 @category   Ecommerce
-@package    AuthnetAIM
-@author     John Conde <johnny@johnconde.net>
+@package    AuthnetXML
+@author     John Conde <authnet@johnconde.net>
 @copyright  2005 - 2011 John Conde
 @license    http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
 @version    3.0
-@link       http://authnet.johnconde.net/
+@link       http://www.johnconde.net/
 
 **************************************************************************************************/
 
