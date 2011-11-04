@@ -42,11 +42,11 @@ Files:
     - cim/updateCustomerProfileRequest.php                              -> Demonstrates using the CIM API to update a customer profile
     - cim/updateCustomerShippingAddressRequest.php                      -> Demonstrates using the CIM API to update a shipping profile
     - cim/validateCustomerPaymentProfileRequest.php                     -> Demonstrates using the CIM API to validate a payment profile
-    - reporting/getBatchStatisticsRequest.php                           -> Demonstrates using the Transaction Details API to process an  transaction
-    - reporting/getSettledBatchListRequest.php                          -> Demonstrates using the Transaction Details API to process an  transaction
-    - reporting/getTransactionDetailsRequest.php                        -> Demonstrates using the Transaction Details API to process an  transaction
-    - reporting/getTransactionListRequest.php                           -> Demonstrates using the Transaction Details API to process an  transaction
-    - reporting/getUnsettledTransactionListRequest.php                  -> Demonstrates using the Transaction Details API to process an  transaction
+    - reporting/getBatchStatisticsRequest.php                           -> Demonstrates using the Transaction Details API to fetch batch statistics
+    - reporting/getSettledBatchListRequest.php                          -> Demonstrates using the Transaction Details API to fetch a settled batch list
+    - reporting/getTransactionDetailsRequest.php                        -> Demonstrates using the Transaction Details API to fetch details of a transaction
+    - reporting/getTransactionListRequest.php                           -> Demonstrates using the Transaction Details API to fetch a list of transactions
+    - reporting/getUnsettledTransactionListRequest.php                  -> Demonstrates using the Transaction Details API to fetch a list of unsettled transactions
     - config.inc.php                                                    -> Contains configurable parameters. Include this file in your project.
     - README                                                            -> This file.
 
@@ -82,3 +82,6 @@ Release Notes
     Version .9
         - Creating the AuthnetXML files
         - Not yet ready for release
+
+To Do
+    - Unit Tests

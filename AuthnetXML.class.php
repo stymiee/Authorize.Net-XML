@@ -22,10 +22,10 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
 
 @category   Ecommerce
 @package    AuthnetXML
-@author     John Conde <authnet@johnconde.net>
+@author     John Conde <github@johnconde.net>
 @copyright  2005 - 2011 John Conde
 @license    http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
-@version    3.0
+@version    1.0
 @link       http://www.johnconde.net/
 
 **************************************************************************************************/
@@ -137,18 +137,21 @@ class AuthnetXML
 
 	private function setParameters($xml, $array)
 	{
-	    foreach ($array as $key => $value)
-		{
-			if (is_array($value))
-			{
-				$xml->addChild($key);
-				$this->setParameters($xml->$key, $value);
-			}
-			else
-			{
-				$xml->$key = $value;
-			}
-		}
+	    if (is_array($array))
+	    {
+    	    foreach ($array as $key => $value)
+    		{
+    			if (is_array($value))
+    			{
+    				$xml->addChild($key);
+    				$this->setParameters($xml->$key, $value);
+    			}
+    			else
+    			{
+    				$xml->$key = $value;
+    			}
+    		}
+    	}
 	}
 
 	private function process()

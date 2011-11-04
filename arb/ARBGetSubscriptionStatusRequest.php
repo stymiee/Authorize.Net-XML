@@ -1,23 +1,47 @@
 <?php
+/*************************************************************************************************
+
+Use the ARB XML API to create get a subscription's status
+
+SAMPLE XML FOR API CALL
+--------------------------------------------------------------------------------------------------
+<?xml version="1.0"?>
+<ARBGetSubscriptionStatusRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name>cnpdev4289</name>
+    <transactionKey>SR2P8g4jdEn7vFLQ</transactionKey>
+  </merchantAuthentication>
+  <refId>Sample</refId>
+  <subscriptionId>1207505</subscriptionId>
+</ARBGetSubscriptionStatusRequest>
+
+SAMPLE XML RESPONSE
+--------------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<ARBGetSubscriptionStatusResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <refId>Sample</refId>
+  <messages>
+    <resultCode>Ok</resultCode>
+    <message>
+      <code>I00001</code>
+      <text>Successful.</text>
+    </message>
+  </messages>
+  <status>active</status>
+</ARBGetSubscriptionStatusResponse>
+
+*************************************************************************************************/
+
     require('../config.inc.php');
     require('../AuthnetXML.class.php');
-
-/*
-    <?xml version="1.0" encoding="utf-8"?>
-    <ARBGetSubscriptionStatusRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <merchantAuthentication>
-            <name>mytestacct</name>
-            <transactionKey>112223344</transactionKey>
-        </merchantAuthentication>
-        <refId>Sample</refId>
-        <subscriptionId>100748</subscriptionId>
-    </ARBGetSubscriptionStatusRequest>
-*/
 
     $xml = new AuthnetXML(AUTHNET_LOGIN, AUTHNET_TRANSKEY, AuthnetXML::USE_DEVELOPMENT_SERVER);
     $xml->ARBGetSubscriptionStatusRequest(array(
         'refId' => 'Sample',
-        'subscriptionId' => '100748'
+        'subscriptionId' => '1207505'
     ));
+
+    echo $xml;
 
 ?>

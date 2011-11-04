@@ -1,55 +1,59 @@
 <?php
+/*
+<?xml version="1.0"?>
+<createCustomerProfileTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name>cnpdev4289</name>
+    <transactionKey>SR2P8g4jdEn7vFLQ</transactionKey>
+  </merchantAuthentication>
+  <transaction>
+    <profileTransPriorAuthCapture>
+      <amount>10.95</amount>
+      <tax>
+        <amount>1.00</amount>
+        <name>WA state sales tax</name>
+        <description>Washington state sales tax</description>
+      </tax>
+      <shipping>
+        <amount>2.00</amount>
+        <name>ground based shipping</name>
+        <description>Ground based 5 to 10 day shipping</description>
+      </shipping>
+      <lineItems>
+        <itemId>ITEM00002</itemId>
+        <name>other name of item sold</name>
+        <description>Description of other item sold</description>
+        <quantity>1</quantity>
+        <unitPrice>1.00</unitPrice>
+        <taxable>true</taxable>
+      </lineItems>
+      <customerProfileId>5427896</customerProfileId>
+      <customerPaymentProfileId>4796541</customerPaymentProfileId>
+      <customerShippingAddressId>4907537</customerShippingAddressId>
+      <transId>2165735481</transId>
+    </profileTransPriorAuthCapture>
+  </transaction>
+  <extraOptions>&lt;![CDATA[x_customer_ip=100.0.0.1]]&gt;</extraOptions>
+</createCustomerProfileTransactionRequest>
+
+<?xml version="1.0" encoding="utf-8"?>
+<createCustomerProfileTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <messages>
+    <resultCode>Ok</resultCode>
+    <message>
+      <code>I00001</code>
+      <text>Successful.</text>
+    </message>
+  </messages>
+  <directResponse>1,1,1,This transaction has been approved.,PEW183,P,2165735481,INV000001,,10.95,CC,prior_auth_capture,12345,,,,,,,12345,,,,,,,,,,,,,1.00,,2.00,,,8C9E188187E3AA30D2B56415CCC9C0DB,,,,,,,,,,,,,XXXX1111,Visa,,,,,,,,,,,,,,,,,4907537,100.0.0.1]]&gt;</directResponse>
+</createCustomerProfileTransactionResponse>
+*/
+
     require('../config.inc.php');
     require('../AuthnetXML.class.php');
 
-/*
-    <?xml version="1.0" encoding="utf-8"?>
-    <createCustomerProfileTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <merchantAuthentication>
-            <name>YourUserLogin</name>
-            <transactionKey>YourTranKey</transactionKey>
-        </merchantAuthentication>
-        <transaction>
-            <profileTransPriorAuthCapture>
-                <amount>10.95</amount>
-                <tax>
-                    <amount>1.00</amount>
-                    <name>WA state sales tax</name>
-                    <description>Washington state sales tax</description>
-                </tax>
-                <shipping>
-                    <amount>2.00</amount>
-                    <name>ground based shipping</name>
-                    <description>Ground based 5 to 10 day shipping</description>
-                </shipping>
-                <lineItems>
-                    <itemId>ITEM00001</itemId>
-                    <name>name of item sold</name>
-                    <description>Description of item sold</description>
-                    <quantity>1</quantity>
-                    <unitPrice>6.95</unitPrice>
-                    <taxable>true</taxable>
-                </lineItems>
-                <lineItems>
-                    <itemId>ITEM00002</itemId>
-                    <name>name of other item sold</name>
-                    <description>Description of other item sold</description>
-                    <quantity>1</quantity>
-                    <unitPrice>1.00</unitPrice>
-                    <taxable>true</taxable>
-                </lineItems>
-                <customerProfileId>10000</customerProfileId>
-                <customerPaymentProfileId>20000</customerPaymentProfileId>
-                <customerShippingAddressId>30000</customerShippingAddressId>
-                <transId>40000</transId>
-            </profileTransPriorAuthCapture>
-        </transaction>
-        <extraOptions><![CDATA[]]></extraOptions>
-    </createCustomerProfileTransactionRequest>
-*/
-
     $xml = new AuthnetXML(AUTHNET_LOGIN, AUTHNET_TRANSKEY, AuthnetXML::USE_DEVELOPMENT_SERVER);
-    $xml->createCustomerShippingAddressRequest(array(
+    $xml->createCustomerProfileTransactionRequest(array(
         'transaction' => array(
             'profileTransPriorAuthCapture' => array(
                 'amount' => '10.95',
@@ -79,13 +83,15 @@
                     'unitPrice' => '1.00',
                     'taxable' => 'true'
                 ),
-                'customerProfileId' => '10000',
-                'customerPaymentProfileId' => '20000',
-                'customerShippingAddressId' => '30000',
-                'transID' => '4000'
+                'customerProfileId' => '5427896',
+                'customerPaymentProfileId' => '4796541',
+                'customerShippingAddressId' => '4907537',
+                'transId' => '2165735481'
             )
         ),
-        'extraOptions' => '<![CDATA[]]>'
+        'extraOptions' => '<![CDATA[x_customer_ip=100.0.0.1]]>'
     ));
+
+    echo $xml;
 
 ?>
