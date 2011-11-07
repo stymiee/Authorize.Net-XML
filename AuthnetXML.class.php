@@ -22,10 +22,10 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
 
 @category   Ecommerce
 @package    AuthnetXML
-@author     John Conde <github@johnconde.net>
+@author     John Conde <authnet@johnconde.net>
 @copyright  2005 - 2011 John Conde
 @license    http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
-@version    1.0
+@version    3.0
 @link       http://www.johnconde.net/
 
 **************************************************************************************************/
@@ -72,9 +72,8 @@ class AuthnetXML
         $output .= '<tr>' . "\n\t\t" . '<th colspan="2"><b>Class Parameters</b></th>' . "\n" . '</tr>' . "\n";
         $output .= '<tr>' . "\n\t\t" . '<td><b>API Login ID</b></td><td>' . $this->login . '</td>' . "\n" . '</tr>' . "\n";
         $output .= '<tr>' . "\n\t\t" . '<td><b>Transaction Key</b></td><td>' . $this->transkey . '</td>' . "\n" . '</tr>' . "\n";
-        $output .= '<tr>' . "\n\t\t" . '<td><b>cURL Handle</b></td><td>' . $this->ch . '</td>' . "\n" . '</tr>' . "\n";
         $output .= '<tr>' . "\n\t\t" . '<td><b>Authnet Server URL</b></td><td>' . $this->url . '</td>' . "\n" . '</tr>' . "\n";
-        $output .= '<tr>' . "\n\t\t" . '<th colspan="2"><b>Outgoing XML</b></th>' . "\n" . '</tr>' . "\n";
+        $output .= '<tr>' . "\n\t\t" . '<th colspan="2"><b>Request XML</b></th>' . "\n" . '</tr>' . "\n";
         if (isset($this->xml) && !empty($this->xml))
         {
             $dom = new DOMDocument('1.0');
@@ -94,13 +93,16 @@ class AuthnetXML
             $dom->preserveWhiteSpace = false;
             $dom->formatOutput = true;
             $dom->loadXML($this->response);
-            $response = $dom->saveXML();
+            $response_xml = $dom->saveXML();
 
+            $output .= '<tr>' . "\n\t\t" . '<th colspan="2"><b>Response XML</b></th>' . "\n" . '</tr>' . "\n";
             $output .= '<tr><td>' . "\n";
-            $output .= 'Response</td><td><pre>' . "\n";
-            $output .= htmlentities($response) . "\n";
+            $output .= 'XML:</td><td><pre>' . "\n";
+            $output .= htmlentities($response_xml) . "\n";
             $output .= '</pre></td></tr>' . "\n";
         }
+        $output .= '</table>';
+
         return $output;
 	}
 

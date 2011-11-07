@@ -6,7 +6,8 @@ License:
     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
 
 About:
-    A PHP library for working with all Authorize.Net's XML APIs
+    A PHP library for working with all Authorize.Net's XML APIs.
+    This is an alternative to the PHP SDK offered by Authorize.Net.
 
 Files:
     - AuthnetXML.class.php                                              -> Handles the sending and receiving of XML. Include this file in your project.
@@ -61,7 +62,7 @@ Install:
     - Include the 'AuthnetXML.class.php' and 'config.inc.php' files in your application.
 
 Usage Examples:
-    - See the individual examples in each APIs directory
+    - See the individual examples in each of the APIs' directory
 
 Test Credit Card Numbers:
     - Set the expiration date to anytime in the future.
@@ -84,4 +85,5 @@ Release Notes
         - Not yet ready for release
 
 To Do
+    - Proper commenting in AuthnetXML.class.php
     - Unit Tests

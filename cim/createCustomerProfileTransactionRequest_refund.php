@@ -1,5 +1,10 @@
 <?php
-/*
+/*************************************************************************************************
+
+Use the CIM XML API to process a Refund (credit)
+
+SAMPLE XML FOR API CALL
+--------------------------------------------------------------------------------------------------
 <?xml version="1.0"?>
 <createCustomerProfileTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <merchantAuthentication>
@@ -42,8 +47,11 @@
   <extraOptions>&lt;![CDATA[x_customer_ip=100.0.0.1]]&gt;</extraOptions>
 </createCustomerProfileTransactionRequest>
 
+SAMPLE XML RESPONSE
+--------------------------------------------------------------------------------------------------
 <?xml version="1.0" encoding="utf-8"?>
-<createCustomerProfileTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+<createCustomerProfileTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <messages>
     <resultCode>Ok</resultCode>
     <message>
@@ -53,7 +61,8 @@
   </messages>
   <directResponse>1,1,1,This transaction has been approved.,,P,2165736189,INV000001,description of transaction,10.95,CC,credit,12345,John,Smith,,123 Main Street,Townsville,NJ,12345,,800-555-1234,,newaddress@example.com,John,Doe,,123 Main St.,Bellevue,WA,98004,USA,1.00,,2.00,,PONUM000001,51DEB62B250542109C649849AF94F600,,,,,,,,,,,,,XXXX1111,Visa,,,,,,,,,,,,,,,,,4907537,100.0.0.1]]&gt;</directResponse>
 </createCustomerProfileTransactionResponse>
-*/
+
+*************************************************************************************************/
 
     require('../config.inc.php');
     require('../AuthnetXML.class.php');
@@ -103,7 +112,74 @@
         ),
         'extraOptions' => '<![CDATA[x_customer_ip=100.0.0.1]]>'
     ));
-
-    echo $xml;
-
 ?>
+
+<!DOCTYPE html>
+<html>
+<html lang="en">
+    <head>
+        <title></title>
+        <style type="text/css">
+            table
+            {
+                border: 1px solid #cccccc;
+                margin: auto;
+                border-collapse: collapse;
+                max-width: 90%;
+            }
+
+            table td
+            {
+                padding: 3px 5px;
+                vertical-align: top;
+                border-top: 1px solid #cccccc;
+            }
+
+            pre
+            {
+            	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+            	white-space: pre-wrap; /* css-3 */
+            	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+            	white-space: -pre-wrap; /* Opera 4-6 */
+            	white-space: -o-pre-wrap; /* Opera 7 */ /*
+            	width: 99%; */
+            	word-wrap: break-word; /* Internet Explorer 5.5+ */
+            }
+
+            table th
+            {
+                background: #e5e5e5;
+                color: #666666;
+            }
+
+            h1, h2
+            {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            CIM :: Refund (Credit)
+        </h1>
+        <h2>
+            Results
+        </h2>
+        <table>
+            <tr>
+                <th>Response</th>
+                <td><?php echo $xml->messages->resultCode; ?></td>
+            </tr>
+            <tr>
+                <th>code</th>
+                <td><?php echo $xml->messages->message->code; ?></td>
+            </tr>
+        </table>
+        <h2>
+            Raw Input/Output
+        </h2>
+<?php
+    echo $xml;
+?>
+    </body>
+</html>

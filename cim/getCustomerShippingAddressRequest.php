@@ -1,5 +1,10 @@
 <?php
-/*
+/*************************************************************************************************
+
+Use the CIM XML API to retrieve a shipping address
+
+SAMPLE XML FOR API CALL
+--------------------------------------------------------------------------------------------------
 <?xml version="1.0"?>
 <getCustomerShippingAddressRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <merchantAuthentication>
@@ -10,8 +15,11 @@
   <customerAddressId>4907537</customerAddressId>
 </getCustomerShippingAddressRequest>
 
+SAMPLE XML RESPONSE
+--------------------------------------------------------------------------------------------------
 <?xml version="1.0" encoding="utf-8"?>
-<getCustomerShippingAddressResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+<getCustomerShippingAddressResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <messages>
     <resultCode>Ok</resultCode>
     <message>
@@ -30,7 +38,8 @@
     <customerAddressId>4907537</customerAddressId>
   </address>
 </getCustomerShippingAddressResponse>
-*/
+
+*************************************************************************************************/
 
     require('../config.inc.php');
     require('../AuthnetXML.class.php');
@@ -40,7 +49,106 @@
         'customerProfileId' => '5427896',
         'customerAddressId' => '4907537'
     ));
-
-    echo $xml;
-
 ?>
+
+<!DOCTYPE html>
+<html>
+<html lang="en">
+    <head>
+        <title></title>
+        <style type="text/css">
+            table
+            {
+                border: 1px solid #cccccc;
+                margin: auto;
+                border-collapse: collapse;
+                max-width: 90%;
+            }
+
+            table td
+            {
+                padding: 3px 5px;
+                vertical-align: top;
+                border-top: 1px solid #cccccc;
+            }
+
+            pre
+            {
+            	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+            	white-space: pre-wrap; /* css-3 */
+            	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+            	white-space: -pre-wrap; /* Opera 4-6 */
+            	white-space: -o-pre-wrap; /* Opera 7 */ /*
+            	width: 99%; */
+            	word-wrap: break-word; /* Internet Explorer 5.5+ */
+            }
+
+            table th
+            {
+                background: #e5e5e5;
+                color: #666666;
+            }
+
+            h1, h2
+            {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            CIM :: Get Shipping Address
+        </h1>
+        <h2>
+            Results
+        </h2>
+        <table>
+            <tr>
+                <th>Response</th>
+                <td><?php echo $xml->messages->resultCode; ?></td>
+            </tr>
+            <tr>
+                <th>code</th>
+                <td><?php echo $xml->messages->message->code; ?></td>
+            </tr>
+            <tr>
+                <th>firstName</th>
+                <td><?php echo $xml->address->firstName; ?></td>
+            </tr>
+            <tr>
+                <th>lastName</th>
+                <td><?php echo $xml->address->lastName; ?></td>
+            </tr>
+            <tr>
+                <th>address</th>
+                <td><?php echo $xml->address->address; ?></td>
+            </tr>
+            <tr>
+                <th>city</th>
+                <td><?php echo $xml->address->city; ?></td>
+            </tr>
+            <tr>
+                <th>state</th>
+                <td><?php echo $xml->address->state; ?></td>
+            </tr>
+            <tr>
+                <th>zip</th>
+                <td><?php echo $xml->address->zip; ?></td>
+            </tr>
+            <tr>
+                <th>phoneNumber</th>
+                <td><?php echo $xml->address->phoneNumber; ?></td>
+            </tr>
+            <tr>
+                <th>customerAddressId</th>
+                <td><?php echo $xml->address->customerAddressId; ?></td>
+            </tr>
+        </table>
+        <h2>
+            Raw Input/Output
+        </h2>
+<?php
+    echo $xml;
+?>
+    </body>
+</html>
