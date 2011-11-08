@@ -80,9 +80,7 @@ Authorize.Net API Documentation
     - Transaction Details Guide  - http://www.authorize.net/support/ReportingGuide_XML.pdf
 
 Release Notes
-    Version .9
-        - Creating the AuthnetXML files
-        - Not yet ready for release
+    Version 1.0 - Initial release
 
 To Do
     - Proper commenting in AuthnetXML.class.php

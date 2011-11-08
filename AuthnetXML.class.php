@@ -23,9 +23,9 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
 @category   Ecommerce
 @package    AuthnetXML
 @author     John Conde <authnet@johnconde.net>
-@copyright  2005 - 2011 John Conde
-@license    http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
-@version    3.0
+@copyright  2011 John Conde
+@license    MIT License
+@version    1.0
 @link       http://www.johnconde.net/
 
 **************************************************************************************************/
@@ -181,12 +181,12 @@ class AuthnetXML
 
 	public function isSuccessful()
     {
-        return $this->response_xml->messages->resultCode === 'Ok';
+        return $this->response_xml->messages->resultCode == 'Ok';
     }
 
     public function isError()
     {
-        return $this->response_xml->messages->resultCode !== 'Ok';
+        return $this->response_xml->messages->resultCode != 'Ok';
     }
 }
 
