@@ -167,7 +167,9 @@ class AuthnetXML
     	curl_setopt($this->ch, CURLOPT_HEADER, 0);
     	curl_setopt($this->ch, CURLOPT_POSTFIELDS, $this->xml);
     	curl_setopt($this->ch, CURLOPT_POST, 1);
-    	curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, 0);
+    	curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, 2);
+    	curl_setopt($this->ch, CURLOPT_CAINFO, dirname(__FILE__) . '/ssl/cert.pem');
+
         if(($this->response = curl_exec($this->ch)) !== false)
         {
             $this->response_xml = @new SimpleXMLElement($this->response);

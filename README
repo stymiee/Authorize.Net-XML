@@ -10,46 +10,46 @@ About:
     This is an alternative to the PHP SDK offered by Authorize.Net.
 
 Files:
-    - AuthnetXML.class.php                                              -> Handles the sending and receiving of XML. Include this file in your project.
-    - aim/createTransactionRequest_authCapture.php                      -> Demonstrates using the AIM API to process an Authorization and Capture transaction (sale)
-    - aim/createTransactionRequest_authOnly.php                         -> Demonstrates using the AIM API to process an Authorization Only transaction
-    - aim/createTransactionRequest_captureOnly.php                      -> Demonstrates using the AIM API to process an Unlinked Capture transaction
-    - aim/createTransactionRequest_priorAuthCapture.php                 -> Demonstrates using the AIM API to process an Prior Authorization Capture transaction
-    - aim/createTransactionRequest_refund.php                           -> Demonstrates using the AIM API to process an Refund transaction (credit)
-    - aim/createTransactionRequest_void.php                             -> Demonstrates using the AIM API to Void a transaction
-    - aim/sendCustomerTransactionReceiptRequest.php                     -> Demonstrates using the AIM API to send a customer a transaction receipt
-    - arb/ARBCancelSubscriptionRequest.php                              -> Demonstrates using the ARB API to cancel a subscription
-    - arb/ARBCreateSubscriptionRequest.php                              -> Demonstrates using the ARB API to create a subscription
-    - arb/ARBGetSubscriptionStatusRequest.php                           -> Demonstrates using the ARB API to get the status of a subscription
-    - arb/ARBUpdateSubscriptionRequest.php                              -> Demonstrates using the ARB API to update a subscription
-    - cim/createCustomerPaymentProfileRequest.php                       -> Demonstrates using the CIM API to create a payment profile
-    - cim/createCustomerProfileRequest.php                              -> Demonstrates using the CIM API to create a customer profile
-    - cim/createCustomerProfileTransactionRequest_authCapture.php       -> Demonstrates using the CIM API to process an Authorization and Capture transaction (sale)
-    - cim/createCustomerProfileTransactionRequest_authOnly.php          -> Demonstrates using the CIM API to process an Authorization Only transaction
-    - cim/createCustomerProfileTransactionRequest_captureOnly.php       -> Demonstrates using the CIM API to process an Unlinked Capture transaction
-    - cim/createCustomerProfileTransactionRequest_priorAuthCapture.php  -> Demonstrates using the CIM API to process an Prior Authorization Capture transaction
-    - cim/createCustomerProfileTransactionRequest_refund.php            -> Demonstrates using the CIM API to process an Refund transaction (credit)
-    - cim/createCustomerProfileTransactionRequest_void.php              -> Demonstrates using the CIM API to Void a transaction
-    - cim/createCustomerShippingAddressRequest.php                      -> Demonstrates using the CIM API to create a shipping profile
-    - cim/deleteCustomerPaymentProfileRequest.php                       -> Demonstrates using the CIM API to delete a customer payment profile
-    - cim/deleteCustomerProfileRequest.php                              -> Demonstrates using the CIM API to delete a customer profile
-    - cim/deleteCustomerShippingAddressRequest.php                      -> Demonstrates using the CIM API to delete a shipping profile
-    - cim/getCustomerPaymentProfileRequest.php                          -> Demonstrates using the CIM API to retrieve a customer payment profile
-    - cim/getCustomerProfileIdsRequest.php                              -> Demonstrates using the CIM API to retrieve a customer's profile IDs
-    - cim/getCustomerProfileRequest.php                                 -> Demonstrates using the CIM API to retrieve a customer profile
-    - cim/getCustomerShippingAddressRequest.php                         -> Demonstrates using the CIM API to retrieve a customer's shipping address
-    - cim/getHostedProfilePageRequest.php                               -> Demonstrates using the CIM API to retrieve a hosted profile page
-    - cim/updateSplitTenderGroupRequest.php                             -> Demonstrates using the CIM API to update a split tender group
-    - cim/updateCustomerProfileRequest.php                              -> Demonstrates using the CIM API to update a customer profile
-    - cim/updateCustomerShippingAddressRequest.php                      -> Demonstrates using the CIM API to update a shipping profile
-    - cim/validateCustomerPaymentProfileRequest.php                     -> Demonstrates using the CIM API to validate a payment profile
-    - reporting/getBatchStatisticsRequest.php                           -> Demonstrates using the Transaction Details API to fetch batch statistics
-    - reporting/getSettledBatchListRequest.php                          -> Demonstrates using the Transaction Details API to fetch a settled batch list
-    - reporting/getTransactionDetailsRequest.php                        -> Demonstrates using the Transaction Details API to fetch details of a transaction
-    - reporting/getTransactionListRequest.php                           -> Demonstrates using the Transaction Details API to fetch a list of transactions
-    - reporting/getUnsettledTransactionListRequest.php                  -> Demonstrates using the Transaction Details API to fetch a list of unsettled transactions
-    - config.inc.php                                                    -> Contains configurable parameters. Include this file in your project.
-    - README                                                            -> This file.
+    - AuthnetXML.class.php                                                       -> Handles the sending and receiving of XML. Include this file in your project.
+    - /examples/aim/createTransactionRequest_authCapture.php                     -> Demonstrates using the AIM API to process an Authorization and Capture transaction (sale)
+    - /examples/aim/createTransactionRequest_authOnly.php                        -> Demonstrates using the AIM API to process an Authorization Only transaction
+    - /examples/aim/createTransactionRequest_captureOnly.php                     -> Demonstrates using the AIM API to process an Unlinked Capture transaction
+    - /examples/aim/createTransactionRequest_priorAuthCapture.php                -> Demonstrates using the AIM API to process an Prior Authorization Capture transaction
+    - /examples/aim/createTransactionRequest_refund.php                          -> Demonstrates using the AIM API to process an Refund transaction (credit)
+    - /examples/aim/createTransactionRequest_void.php                            -> Demonstrates using the AIM API to Void a transaction
+    - /examples/aim/sendCustomerTransactionReceiptRequest.php                    -> Demonstrates using the AIM API to send a customer a transaction receipt
+    - /examples/arb/ARBCancelSubscriptionRequest.php                             -> Demonstrates using the ARB API to cancel a subscription
+    - /examples/arb/ARBCreateSubscriptionRequest.php                             -> Demonstrates using the ARB API to create a subscription
+    - /examples/arb/ARBGetSubscriptionStatusRequest.php                          -> Demonstrates using the ARB API to get the status of a subscription
+    - /examples/arb/ARBUpdateSubscriptionRequest.php                             -> Demonstrates using the ARB API to update a subscription
+    - /examples/cim/createCustomerPaymentProfileRequest.php                      -> Demonstrates using the CIM API to create a payment profile
+    - /examples/cim/createCustomerProfileRequest.php                             -> Demonstrates using the CIM API to create a customer profile
+    - /examples/cim/createCustomerProfileTransactionRequest_authCapture.php      -> Demonstrates using the CIM API to process an Authorization and Capture transaction (sale)
+    - /examples/cim/createCustomerProfileTransactionRequest_authOnly.php         -> Demonstrates using the CIM API to process an Authorization Only transaction
+    - /examples/cim/createCustomerProfileTransactionRequest_captureOnly.php      -> Demonstrates using the CIM API to process an Unlinked Capture transaction
+    - /examples/cim/createCustomerProfileTransactionRequest_priorAuthCapture.php -> Demonstrates using the CIM API to process an Prior Authorization Capture transaction
+    - /examples/cim/createCustomerProfileTransactionRequest_refund.php           -> Demonstrates using the CIM API to process an Refund transaction (credit)
+    - /examples/cim/createCustomerProfileTransactionRequest_void.php             -> Demonstrates using the CIM API to Void a transaction
+    - /examples/cim/createCustomerShippingAddressRequest.php                     -> Demonstrates using the CIM API to create a shipping profile
+    - /examples/cim/deleteCustomerPaymentProfileRequest.php                      -> Demonstrates using the CIM API to delete a customer payment profile
+    - /examples/cim/deleteCustomerProfileRequest.php                             -> Demonstrates using the CIM API to delete a customer profile
+    - /examples/cim/deleteCustomerShippingAddressRequest.php                     -> Demonstrates using the CIM API to delete a shipping profile
+    - /examples/cim/getCustomerPaymentProfileRequest.php                         -> Demonstrates using the CIM API to retrieve a customer payment profile
+    - /examples/cim/getCustomerProfileIdsRequest.php                             -> Demonstrates using the CIM API to retrieve a customer's profile IDs
+    - /examples/cim/getCustomerProfileRequest.php                                -> Demonstrates using the CIM API to retrieve a customer profile
+    - /examples/cim/getCustomerShippingAddressRequest.php                        -> Demonstrates using the CIM API to retrieve a customer's shipping address
+    - /examples/cim/getHostedProfilePageRequest.php                              -> Demonstrates using the CIM API to retrieve a hosted profile page
+    - /examples/cim/updateSplitTenderGroupRequest.php                            -> Demonstrates using the CIM API to update a split tender group
+    - /examples/cim/updateCustomerProfileRequest.php                             -> Demonstrates using the CIM API to update a customer profile
+    - /examples/cim/updateCustomerShippingAddressRequest.php                     -> Demonstrates using the CIM API to update a shipping profile
+    - /examples/cim/validateCustomerPaymentProfileRequest.php                    -> Demonstrates using the CIM API to validate a payment profile
+    - /examples/reporting/getBatchStatisticsRequest.php                          -> Demonstrates using the Transaction Details API to fetch batch statistics
+    - /examples/reporting/getSettledBatchListRequest.php                         -> Demonstrates using the Transaction Details API to fetch a settled batch list
+    - /examples/reporting/getTransactionDetailsRequest.php                       -> Demonstrates using the Transaction Details API to fetch details of a transaction
+    - /examples/reporting/getTransactionListRequest.php                          -> Demonstrates using the Transaction Details API to fetch a list of transactions
+    - /examples/reporting/getUnsettledTransactionListRequest.php                 -> Demonstrates using the Transaction Details API to fetch a list of unsettled transactions
+    - config.inc.php                                                             -> Contains configurable parameters. Include this file in your project.
+    - README                                                                     -> This file.
 
 Requirements:
     - PHP 5.2+
