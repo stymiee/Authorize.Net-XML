@@ -8,8 +8,8 @@ SAMPLE XML FOR API CALL
 <?xml version="1.0"?>
 <sendCustomerTransactionReceiptRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <merchantAuthentication>
-    <name>cnpdev4289</name>
-    <transactionKey>SR2P8g4jdEn7vFLQ</transactionKey>
+    <name>yourloginid</name>
+    <transactionKey>yourtransactionkey</transactionKey>
   </merchantAuthentication>
   <refId>22689483</refId>
   <transId>2165665581</transId>

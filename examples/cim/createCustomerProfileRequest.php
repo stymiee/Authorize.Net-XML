@@ -8,8 +8,8 @@ SAMPLE XML FOR API CALL
 <?xml version="1.0"?>
 <createCustomerProfileRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <merchantAuthentication>
-    <name>cnpdev4289</name>
-    <transactionKey>SR2P8g4jdEn7vFLQ</transactionKey>
+    <name>yourloginid</name>
+    <transactionKey>yourtransactionkey</transactionKey>
   </merchantAuthentication>
   <profile>
     <merchantCustomerId>12345</merchantCustomerId>
@@ -47,7 +47,8 @@ SAMPLE XML FOR API CALL
 SAMPLE XML RESPONSE
 --------------------------------------------------------------------------------------------------
 <?xml version="1.0" encoding="utf-8"?>
-<createCustomerProfileResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+<createCustomerProfileResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <messages>
     <resultCode>Ok</resultCode>
     <message>
@@ -175,10 +176,6 @@ SAMPLE XML RESPONSE
             <tr>
                 <th>Error?</th>
                 <td><?php echo ($xml->isError()) ? 'yes' : 'no'; ?></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td><?php echo $xml->transactionResponse->; ?></td>
             </tr>
         </table>
         <h2>

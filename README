@@ -40,6 +40,7 @@ Files:
     - /examples/cim/getCustomerShippingAddressRequest.php                        -> Demonstrates using the CIM API to retrieve a customer's shipping address
     - /examples/cim/getHostedProfilePageRequest.php                              -> Demonstrates using the CIM API to retrieve a hosted profile page
     - /examples/cim/updateSplitTenderGroupRequest.php                            -> Demonstrates using the CIM API to update a split tender group
+    - /examples/cim/updateCustomerPaymentProfileRequest.php                      -> Demonstrates using the CIM API to update a customer's payment profile
     - /examples/cim/updateCustomerProfileRequest.php                             -> Demonstrates using the CIM API to update a customer profile
     - /examples/cim/updateCustomerShippingAddressRequest.php                     -> Demonstrates using the CIM API to update a shipping profile
     - /examples/cim/validateCustomerPaymentProfileRequest.php                    -> Demonstrates using the CIM API to validate a payment profile

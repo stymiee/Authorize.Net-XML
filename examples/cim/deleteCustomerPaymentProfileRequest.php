@@ -8,8 +8,8 @@ SAMPLE XML FOR API CALL
 <?xml version="1.0"?>
 <deleteCustomerPaymentProfileRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <merchantAuthentication>
-    <name>cnpdev4289</name>
-    <transactionKey>SR2P8g4jdEn7vFLQ</transactionKey>
+    <name>yourloginid</name>
+    <transactionKey>yourtransactionkey</transactionKey>
   </merchantAuthentication>
   <customerProfileId>5427896</customerProfileId>
   <customerPaymentProfileId>4796541</customerPaymentProfileId>

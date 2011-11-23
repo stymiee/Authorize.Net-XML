@@ -8,8 +8,8 @@ SAMPLE XML FOR API CALL
 <?xml version="1.0"?>
 <ARBGetSubscriptionStatusRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <merchantAuthentication>
-    <name>cnpdev4289</name>
-    <transactionKey>SR2P8g4jdEn7vFLQ</transactionKey>
+    <name>yourloginid</name>
+    <transactionKey>yourtransactionkey</transactionKey>
   </merchantAuthentication>
   <refId>Sample</refId>
   <subscriptionId>1207505</subscriptionId>

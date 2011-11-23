@@ -1,23 +1,44 @@
 <?php
 /*************************************************************************************************
 
-Use the CIM XML API to delete a customer profile
+Use the CIM XML API to update a customer profile
 
 SAMPLE XML FOR API CALL
 --------------------------------------------------------------------------------------------------
 <?xml version="1.0"?>
-<deleteCustomerProfileRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+<updateCustomerPaymentProfileRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <merchantAuthentication>
     <name>yourloginid</name>
     <transactionKey>yourtransactionkey</transactionKey>
   </merchantAuthentication>
-  <customerProfileId>5427896</customerProfileId>
-</deleteCustomerProfileRequest>
+  <customerProfileId>5685296</customerProfileId>
+  <paymentProfile>
+    <billTo>
+      <firstName>John</firstName>
+      <lastName>Doe</lastName>
+      <company/>
+      <address>123 Main St.</address>
+      <city>Bellevue</city>
+      <state>WA</state>
+      <zip>98004</zip>
+      <country>USA</country>
+      <phoneNumber>800-555-1234</phoneNumber>
+      <faxNumber>800-555-1234</faxNumber>
+    </billTo>
+    <payment>
+      <creditCard>
+        <cardNumber>4111111111111111</cardNumber>
+        <expirationDate>2016-08</expirationDate>
+      </creditCard>
+    </payment>
+    <customerPaymentProfileId>4966870</customerPaymentProfileId>
+  </paymentProfile>
+</updateCustomerPaymentProfileRequest>
 
 SAMPLE XML RESPONSE
 --------------------------------------------------------------------------------------------------
 <?xml version="1.0" encoding="utf-8"?>
-<deleteCustomerProfileResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<updateCustomerPaymentProfileResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
   <messages>
     <resultCode>Ok</resultCode>
@@ -26,7 +47,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
       <text>Successful.</text>
     </message>
   </messages>
-</deleteCustomerProfileResponse>
+</updateCustomerPaymentProfileResponse>
 
 *************************************************************************************************/
 
@@ -34,8 +55,29 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
     require('../../AuthnetXML.class.php');
 
     $xml = new AuthnetXML(AUTHNET_LOGIN, AUTHNET_TRANSKEY, AuthnetXML::USE_DEVELOPMENT_SERVER);
-    $xml->deleteCustomerProfileRequest(array(
-        'customerProfileId' => '5427896'
+    $xml->updateCustomerPaymentProfileRequest(array(
+        'customerProfileId' => '5685296',
+        'paymentProfile' => array(
+            'billTo' => array(
+                'firstName' => 'John',
+                'lastName' => 'Doe',
+                'company' => '',
+                'address' => '123 Main St.',
+                'city' => 'Bellevue',
+                'state' => 'WA',
+                'zip' => '98004',
+                'country' => 'USA',
+                'phoneNumber' => '800-555-1234',
+                'faxNumber' => '800-555-1234'
+            ),
+            'payment' => array(
+                'creditCard' => array(
+                    'cardNumber' => '4111111111111111',
+                    'expirationDate' => '2016-08'
+                )
+            ),
+            'customerPaymentProfileId' => '4966870'
+        )
     ));
 ?>
 
@@ -85,7 +127,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
     </head>
     <body>
         <h1>
-            CIM :: Delete Customer Profile
+            CIM :: Update Customer Profile
         </h1>
         <h2>
             Results
