@@ -177,6 +177,18 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
                 <th>Error?</th>
                 <td><?php echo ($xml->isError()) ? 'yes' : 'no'; ?></td>
             </tr>
+            <tr>
+                <th>customerPaymentProfileId</th>
+                <td><?php echo $xml->transactionResponse->customerProfileId; ?></td>
+            </tr>
+            <tr>
+                <th>customerPaymentProfileIdId</th>
+                <td><?php echo $xml->transactionResponse->customerPaymentProfileIdList->numericString; ?></td>
+            </tr>
+            <tr>
+                <th>customerShippingAddressIdList</th>
+                <td><?php echo $xml->transactionResponse->customerShippingAddressIdList->numericString; ?></td>
+            </tr>
         </table>
         <h2>
             Raw Input/Output
