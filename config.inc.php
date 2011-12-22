@@ -1,6 +1,6 @@
 <?php
-    define('AUTHNET_LOGIN', '');
-    define('AUTHNET_TRANSKEY', '');
+    define('AUTHNET_LOGIN', 'cnpdev4289');
+    define('AUTHNET_TRANSKEY', 'SR2P8g4jdEn7vFLQ');
 
     if (!function_exists('curl_init'))
     {
@@ -9,6 +9,7 @@
 
     if (!function_exists('simplexml_load_file'))
     {
-      throw new Exception('SimpleXML PHP extension not installed');
+        throw new Exception('SimpleXML PHP extension not installed');
     }
+
 ?>

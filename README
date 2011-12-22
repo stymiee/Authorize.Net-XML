@@ -3,7 +3,7 @@ By:
     http://www.johnconde.net
 
 License:
-    http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
+    http://www.opensource.org/licenses/mit-license.html MIT License
 
 About:
     A PHP library for working with all Authorize.Net's XML APIs.
