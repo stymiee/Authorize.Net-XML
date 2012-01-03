@@ -60,6 +60,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
 </createTransactionResponse>
 
 *************************************************************************************************/
+
     require('../../config.inc.php');
     require('../../AuthnetXML.class.php');
 

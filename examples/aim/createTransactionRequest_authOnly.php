@@ -22,6 +22,10 @@ SAMPLE XML FOR API CALL
         <cardCode>999</cardCode>
       </creditCard>
     </payment>
+    <order>
+        <invoiceNumber>1324567890</invoiceNumber>
+        <description>this is a test transaction</description>
+    </order>
     <lineItems>
       <lineItem>
         <itemId>1</itemId>
@@ -129,6 +133,9 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
 
 *************************************************************************************************/
 
+    require('../../config.inc.php');
+    require('../../AuthnetXML.class.php');
+
     $xml = new AuthnetXML(AUTHNET_LOGIN, AUTHNET_TRANSKEY, AuthnetXML::USE_DEVELOPMENT_SERVER);
     $xml->createTransactionRequest(array(
         'refId' => rand(1000000, 100000000),
@@ -141,6 +148,10 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
                     'expirationDate' => '122016',
                     'cardCode' => '999',
                 ),
+            ),
+            'order' => array(
+                'invoiceNumber' => '1324567890',
+                'description' => 'this is a test transaction',
             ),
             'lineItems' => array(
                 'lineItem' => array(
