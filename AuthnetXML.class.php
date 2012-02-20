@@ -65,6 +65,19 @@ class AuthnetXML
         $this->url = 'https://' . $subdomain . '.authorize.net/xml/v1/request.api';
 	}
 
+    /**
+     * remove XML response namespaces
+     * without this php will spit out warinings
+     * @see http://community.developer.authorize.net/t5/Integration-and-Testing/ARB-with-SimpleXML-PHP-Issue/m-p/7128#M5139
+     */
+    private function removeResponseXMLNS($input)
+    {
+        // why remove them one at a time? all three aren't consistantly used in the response
+        $input = str_replace(' xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"','',$input);
+        $input = str_replace(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"','',$input);
+        return str_replace(' xmlns:xsd="http://www.w3.org/2001/XMLSchema"','',$input);
+    }
+
 	public function __toString()
 	{
 	    $output  = '';
@@ -79,7 +92,7 @@ class AuthnetXML
             $dom = new DOMDocument('1.0');
             $dom->preserveWhiteSpace = false;
             $dom->formatOutput = true;
-            $dom->loadXML($this->xml);
+            $dom->loadXML(self::removeResponseXMLNS($this->xml));
             $outgoing_xml = $dom->saveXML();
 
             $output .= '<tr><td>' . "\n";
@@ -92,7 +105,7 @@ class AuthnetXML
             $dom = new DOMDocument('1.0');
             $dom->preserveWhiteSpace = false;
             $dom->formatOutput = true;
-            $dom->loadXML($this->response);
+            $dom->loadXML(self::removeResponseXMLNS($this->response));
             $response_xml = $dom->saveXML();
 
             $output .= '<tr>' . "\n\t\t" . '<th colspan="2"><b>Response XML</b></th>' . "\n" . '</tr>' . "\n";
