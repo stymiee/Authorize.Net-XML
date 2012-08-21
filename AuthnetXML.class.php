@@ -158,8 +158,23 @@ class AuthnetXML
     		{
     			if (is_array($value))
     			{
-    				$xml->addChild($key);
-    				$this->setParameters($xml->$key, $value);
+    				if($key === 'lineItems')
+    				{
+    				    $line_items = $xml->addChild('lineItems');
+    				    foreach($value as $lineitems)
+                        {
+                            $line_item = $line_items->addChild('lineItem');
+                            foreach($lineitems as $itemkey => $itemvalue)
+                            {
+                                $line_item->addChild($itemkey, $itemvalue);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        $xml->addChild($key);
+    				    $this->setParameters($xml->$key, $value);
+    				}
     			}
     			else
     			{
@@ -196,12 +211,12 @@ class AuthnetXML
 
 	public function isSuccessful()
     {
-        return $this->response_xml->messages->resultCode == 'Ok';
+        return $this->response_xml->messages->resultCode === 'Ok';
     }
 
     public function isError()
     {
-        return $this->response_xml->messages->resultCode != 'Ok';
+        return $this->response_xml->messages->resultCode !== 'Ok';
     }
 }
 

@@ -34,6 +34,13 @@ SAMPLE XML FOR API CALL
         <quantity>18</quantity>
         <unitPrice>45.00</unitPrice>
       </lineItem>
+      <lineItem>
+        <itemId>2</itemId>
+        <name>desk</name>
+        <description>Big Desk</description>
+        <quantity>10</quantity>
+        <unitPrice>85.00</unitPrice>
+      </lineItem>
     </lineItems>
     <tax>
       <amount>4.26</amount>
@@ -154,12 +161,19 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
                 'description' => 'this is a test transaction',
             ),
             'lineItems' => array(
-                'lineItem' => array(
+                0 => array(
                     'itemId' => '1',
                     'name' => 'vase',
                     'description' => 'Cannes logo',
                     'quantity' => '18',
                     'unitPrice' => '45.00',
+                ),
+                1 => array(
+                    'itemId' => '2',
+                    'name' => 'desk',
+                    'description' => 'Big Desk',
+                    'quantity' => '10',
+                    'unitPrice' => '85.00',
                 ),
             ),
             'tax' => array(
