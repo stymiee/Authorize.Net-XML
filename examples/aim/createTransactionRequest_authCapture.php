@@ -88,6 +88,10 @@ SAMPLE XML FOR API CALL
         <settingName>testRequest</settingName>
         <settingValue>false</settingValue>
       </setting>
+      <setting>
+        <settingName>recurringBilling</settingName>
+        <settingValue>false</settingValue>
+      </setting>
     </transactionSettings>
     <userFields>
       <userField>
@@ -161,20 +165,22 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
                 'description' => 'this is a test transaction',
             ),
             'lineItems' => array(
-                0 => array(
-                    'itemId' => '1',
-                    'name' => 'vase',
-                    'description' => 'Cannes logo',
-                    'quantity' => '18',
-                    'unitPrice' => '45.00',
-                ),
-                1 => array(
-                    'itemId' => '2',
-                    'name' => 'desk',
-                    'description' => 'Big Desk',
-                    'quantity' => '10',
-                    'unitPrice' => '85.00',
-                ),
+                'lineItem' => array(
+                    0 => array(
+                        'itemId' => '1',
+                        'name' => 'vase',
+                        'description' => 'Cannes logo',
+                        'quantity' => '18',
+                        'unitPrice' => '45.00'
+                    ),
+                    1 => array(
+                        'itemId' => '2',
+                        'name' => 'desk',
+                        'description' => 'Big Desk',
+                        'quantity' => '10',
+                        'unitPrice' => '85.00'
+                    )
+                )
             ),
             'tax' => array(
                'amount' => '4.26',
@@ -219,25 +225,27 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
             'customerIP' => '192.168.1.1',
             'transactionSettings' => array(
                 'setting' => array(
-                    'settingName' => 'allowPartialAuth',
-                    'settingValue' => 'false',
-                ),
-                'setting' => array(
-                    'settingName' => 'duplicateWindow',
-                    'settingValue' => '0',
-                ),
-                'setting' => array(
-                    'settingName' => 'emailCustomer',
-                    'settingValue' => 'false',
-                ),
-                'setting' => array(
-                  'settingName' => 'recurringBilling',
-                  'settingValue' => 'false',
-                ),
-                'setting' => array(
-                    'settingName' => 'testRequest',
-                    'settingValue' => 'false',
-                ),
+                    0 => array(
+                        'settingName' =>'allowPartialAuth',
+                        'settingValue' => 'false'
+                    ),
+                    1 => array(
+                        'settingName' => 'duplicateWindow',
+                        'settingValue' => '0'
+                    ),
+                    2 => array(
+                        'settingName' => 'emailCustomer',
+                        'settingValue' => 'false'
+                    ),
+                    3 => array(
+                        'settingName' => 'recurringBilling',
+                        'settingValue' => 'false'
+                    ),
+                    4 => array(
+                        'settingName' => 'testRequest',
+                        'settingValue' => 'false'
+                    )
+                )
             ),
             'userFields' => array(
                 'userField' => array(

@@ -153,35 +153,37 @@ class AuthnetXML
 	private function setParameters($xml, $array)
 	{
 	    if (is_array($array))
-	    {
-    	    foreach ($array as $key => $value)
-    		{
-    			if (is_array($value))
-    			{
-    				if($key === 'lineItems')
-    				{
-    				    $line_items = $xml->addChild('lineItems');
-    				    foreach($value as $lineitems)
+        {
+            $first = true;
+            foreach ($array as $key => $value)
+            {
+                if (is_array($value))
+                {
+                    if(is_numeric($key))
+                    {
+                        if($first === true)
                         {
-                            $line_item = $line_items->addChild('lineItem');
-                            foreach($lineitems as $itemkey => $itemvalue)
-                            {
-                                $line_item->addChild($itemkey, $itemvalue);
-                            }
+                            $xmlx  = $xml;
+                            $first = false;
+                        }
+                        else
+                        {
+                            $parent = $xml->xpath('parent::*');
+                            $xmlx = $parent[0]->addChild($xml->getName());
                         }
                     }
                     else
                     {
-                        $xml->addChild($key);
-    				    $this->setParameters($xml->$key, $value);
-    				}
-    			}
-    			else
-    			{
-    				$xml->$key = $value;
-    			}
-    		}
-    	}
+                        $xmlx = $xml->addChild($key);
+                    }
+                    $this->setParameters($xmlx, $value);
+                }
+                else
+                {
+                    $xml->$key = $value;
+                }
+            }
+        }
 	}
 
 	private function process()
