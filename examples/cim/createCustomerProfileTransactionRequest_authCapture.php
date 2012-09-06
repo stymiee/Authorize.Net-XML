@@ -25,12 +25,20 @@ SAMPLE XML FOR API CALL
         <description>Ground based 5 to 10 day shipping</description>
       </shipping>
       <lineItems>
-        <itemId>ITEM00002</itemId>
-        <name>other name of item sold</name>
-        <description>Description of other item sold</description>
-        <quantity>1</quantity>
-        <unitPrice>1.00</unitPrice>
-        <taxable>true</taxable>
+      <lineItem>
+        <itemId>1</itemId>
+        <name>vase</name>
+        <description>Cannes logo</description>
+        <quantity>18</quantity>
+        <unitPrice>45.00</unitPrice>
+      </lineItem>
+      <lineItem>
+        <itemId>2</itemId>
+        <name>desk</name>
+        <description>Big Desk</description>
+        <quantity>10</quantity>
+        <unitPrice>85.00</unitPrice>
+      </lineItem>
       </lineItems>
       <customerProfileId>5427896</customerProfileId>
       <customerPaymentProfileId>4796541</customerPaymentProfileId>
@@ -84,20 +92,22 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
                     'description' => 'Ground based 5 to 10 day shipping'
                 ),
                 'lineItems' => array(
-                    'itemId' => 'ITEM00001',
-                    'name' => 'name of item sold',
-                    'description' => 'Description of item sold',
-                    'quantity' => '1',
-                    'unitPrice' => '6.95',
-                    'taxable' => 'true'
-                ),
-                'lineItems' => array(
-                    'itemId' => 'ITEM00002',
-                    'name' => 'other name of item sold',
-                    'description' => 'Description of other item sold',
-                    'quantity' => '1',
-                    'unitPrice' => '1.00',
-                    'taxable' => 'true'
+                    'lineItem' => array(
+                        0 => array(
+                            'itemId' => '1',
+                            'name' => 'vase',
+                            'description' => 'Cannes logo',
+                            'quantity' => '18',
+                            'unitPrice' => '45.00'
+                        ),
+                        1 => array(
+                            'itemId' => '2',
+                            'name' => 'desk',
+                            'description' => 'Big Desk',
+                            'quantity' => '10',
+                            'unitPrice' => '85.00'
+                        )
+                    )
                 ),
                 'customerProfileId' => '5427896',
                 'customerPaymentProfileId' => '4796541',

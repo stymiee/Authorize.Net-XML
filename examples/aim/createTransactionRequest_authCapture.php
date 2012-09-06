@@ -6,25 +6,25 @@ Use the AIM XML API to process an Authorization and Capture transaction (Sale)
 SAMPLE XML FOR API CALL
 --------------------------------------------------------------------------------------------------
 <?xml version="1.0"?>
-<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+<createTransactionRequest>
   <merchantAuthentication>
-    <name>yourloginid</name>
-    <transactionKey>yourtransactionkey</transactionKey>
+    <name>cnpdev4289</name>
+    <transactionKey>SR2P8g4jdEn7vFLQ</transactionKey>
   </merchantAuthentication>
-  <refId>92347199</refId>
+  <refId>15202850</refId>
   <transactionRequest>
     <transactionType>authCaptureTransaction</transactionType>
     <amount>5</amount>
     <payment>
       <creditCard>
-        <cardNumber>5424000000000015</cardNumber>
+        <cardNumber>4111111111111111</cardNumber>
         <expirationDate>122016</expirationDate>
         <cardCode>999</cardCode>
       </creditCard>
     </payment>
     <order>
-        <invoiceNumber>1324567890</invoiceNumber>
-        <description>this is a test transaction</description>
+      <invoiceNumber>1324567890</invoiceNumber>
+      <description>this is a test transaction</description>
     </order>
     <lineItems>
       <lineItem>
@@ -85,11 +85,23 @@ SAMPLE XML FOR API CALL
     <customerIP>192.168.1.1</customerIP>
     <transactionSettings>
       <setting>
-        <settingName>testRequest</settingName>
+        <settingName>allowPartialAuth</settingName>
+        <settingValue>false</settingValue>
+      </setting>
+      <setting>
+        <settingName>duplicateWindow</settingName>
+        <settingValue>0</settingValue>
+      </setting>
+      <setting>
+        <settingName>emailCustomer</settingName>
         <settingValue>false</settingValue>
       </setting>
       <setting>
         <settingName>recurringBilling</settingName>
+        <settingValue>false</settingValue>
+      </setting>
+      <setting>
+        <settingName>testRequest</settingName>
         <settingValue>false</settingValue>
       </setting>
     </transactionSettings>
