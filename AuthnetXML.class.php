@@ -213,12 +213,12 @@ class AuthnetXML
 
 	public function isSuccessful()
     {
-        return $this->response_xml->messages->resultCode === 'Ok';
+        return $this->response_xml->messages->resultCode == 'Ok';
     }
 
     public function isError()
     {
-        return $this->response_xml->messages->resultCode !== 'Ok';
+        return $this->response_xml->messages->resultCode != 'Ok';
     }
 }
 

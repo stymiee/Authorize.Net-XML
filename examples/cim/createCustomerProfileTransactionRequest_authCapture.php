@@ -92,21 +92,19 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
                     'description' => 'Ground based 5 to 10 day shipping'
                 ),
                 'lineItems' => array(
-                    'lineItem' => array(
-                        0 => array(
-                            'itemId' => '1',
-                            'name' => 'vase',
-                            'description' => 'Cannes logo',
-                            'quantity' => '18',
-                            'unitPrice' => '45.00'
-                        ),
-                        1 => array(
-                            'itemId' => '2',
-                            'name' => 'desk',
-                            'description' => 'Big Desk',
-                            'quantity' => '10',
-                            'unitPrice' => '85.00'
-                        )
+                    0 => array(
+                        'itemId' => '1',
+                        'name' => 'vase',
+                        'description' => 'Cannes logo',
+                        'quantity' => '18',
+                        'unitPrice' => '45.00'
+                    ),
+                    1 => array(
+                        'itemId' => '2',
+                        'name' => 'desk',
+                        'description' => 'Big Desk',
+                        'quantity' => '10',
+                        'unitPrice' => '85.00'
                     )
                 ),
                 'customerProfileId' => '5427896',
