@@ -25,7 +25,7 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
 @author     John Conde <authnet@johnconde.net>
 @copyright  2011 John Conde
 @license    MIT License
-@version    1.0
+@version    1.0.4
 @link       http://www.johnconde.net/
 
 **************************************************************************************************/
