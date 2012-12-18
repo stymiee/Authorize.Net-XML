@@ -157,15 +157,15 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
             </tr>
             <tr>
                 <th>customerPaymentProfileId</th>
-                <td><?php echo $xml->customerPaymentProfileId</td>
+                <td><?php echo $xml->customerPaymentProfileId; ?></td>
             </tr>
             <tr>
                 <th>cardNumber</th>
-                <td><?php echo $xml->payment->creditCard->cardNumber</td>
+                <td><?php echo $xml->payment->creditCard->cardNumber; ?></td>
             </tr>
             <tr>
                 <th>expirationDate</th>
-                <td><?php echo $xml->payment->creditCard->expirationDate</td>
+                <td><?php echo $xml->payment->creditCard->expirationDate; ?></td>
             </tr>
         </table>
         <h2>
