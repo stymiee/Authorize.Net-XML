@@ -211,14 +211,14 @@ class AuthnetXML
         throw new AuthnetXMLException('Connection error: ' . curl_error($this->ch) . ' (' . curl_errno($this->ch) . ')', self::EXCEPTION_CURL);
 	}
 
-    public function isSuccessful()
+	public function isSuccessful()
     {
-       return (int)$this->response_xml->transactionResponse->responseCode === 1;
+        return $this->response_xml->messages->resultCode == 'Ok';
     }
-    
+
     public function isError()
     {
-        return !$this->isSuccessful();
+        return $this->response_xml->messages->resultCode != 'Ok';
     }
 }
 
