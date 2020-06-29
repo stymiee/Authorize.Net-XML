@@ -2,7 +2,7 @@
 
 A PHP class that abstracts the Authorize.Net XML API
 
-This class is deprecated. I*t is recommended that you use the 
+This class is deprecated. It is recommended that you use the 
 [AuthnetJson PHP package](https://github.com/stymiee/authnetjson) instead.
 
 ## Requirements:
