@@ -40,6 +40,9 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
 
 **************************************************************************************************/
 
+    require('../../config.inc.php');
+    require('../../AuthnetXML.class.php');
+
     $xml = new AuthnetXML(AUTHNET_LOGIN, AUTHNET_TRANSKEY, AuthnetXML::USE_DEVELOPMENT_SERVER);
     $xml->sendCustomerTransactionReceiptRequest(array(
         'refId' => rand(1000000, 100000000),

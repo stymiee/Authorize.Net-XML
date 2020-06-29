@@ -72,8 +72,8 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetAp
             'amount' => 5,
             'payment' => array(
                 'creditCard' => array(
-                    'cardNumber' => 'XXXX1111',
-                    'expirationDate' => '122016'
+                    'cardNumber' => '4111111111111111',
+                    'expirationDate' => '122016',
                 )
             ),
             'authCode' => '2165668159'
